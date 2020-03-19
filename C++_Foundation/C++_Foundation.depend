@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1578381145 source:c:\xxxx_learning\coding-c++_algorithm\c++_foundation\temp.cpp
+	<iostream>
+
+1584614306 source:c:\xxxx_coderepository\c++_foundation\temp2_run.cpp
+	<stdio.h>
+	<iostream>
+	<string>
+	<iomanip>
+

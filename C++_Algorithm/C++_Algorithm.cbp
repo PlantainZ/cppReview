@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="C++_Algorithm" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/C++_Algorithm" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/C++_Algorithm" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="A_20190119.cpp" />
+		<Unit filename="A_20190121.cpp" />
+		<Unit filename="A_20190122.cpp" />
+		<Unit filename="A_20190125.cpp" />
+		<Unit filename="A_20190126.cpp" />
+		<Unit filename="A_20190129.cpp" />
+		<Unit filename="A_20190130.cpp" />
+		<Unit filename="A_20190131.cpp" />
+		<Unit filename="A_20190201.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="A_20190203.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="A_20190730.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="A_20190825.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="A_20191225.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="A_20191226.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="A_20191227.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="A_20191228.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="A_20200109.cpp" />
+		<Unit filename="Algorithm_RECORD" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

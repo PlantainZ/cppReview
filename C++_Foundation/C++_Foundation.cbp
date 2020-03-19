@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="C++_Foundation" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/C++_Foundation" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/C++_Foundation" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="F_20190118.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="F_20190119.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="F_20190124.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="F_20190125.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="F_20190129.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="F_20190202.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="F_20190203.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="F_20200104.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="F_20200105.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="F_20200107.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="Foundation_RECORD">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="temp.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="temp2_run.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
