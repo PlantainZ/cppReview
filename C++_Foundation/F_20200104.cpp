@@ -2,16 +2,17 @@
 ///【1.unordered_maps 如何使用================================================================================】
 #include <iostream>
 #include <string>
-#include<algorithm>
+#include <algorithm>
 #include <unordered_map>
 using namespace std;
 
 typedef unordered_map<string,string> stringmap;
 
 stringmap merge (stringmap a,stringmap b) {
-  stringmap temp(a); temp.insert(b.begin(),b.end()); return temp;
+    stringmap temp(a);
+    temp.insert(b.begin(),b.end());
+    return temp;
 }
-
 
 int main ()
 {
@@ -24,8 +25,13 @@ int main ()
 
   cout << "sixth contains:";
   for (auto& x: sixth) cout << " " << x.first << ":" << x.second;
-  cout << endl;
+/* auto：用来声明自动变量。它是存储类型标识符，表明变量(自动)具有本地范围，
+块范围的变量声明(如for循环体内的变量声明)默认为auto存储类型。
 
+其实大多普通声明方式声明的变量都是auto变量,他们不需要明确指定auto关键字，默认就是auto的了。
+auto变量在离开作用域是会变程序自动释放，不会发生内存溢出情况(除了包含指针的类)。
+使用auto变量的优势是不需要考虑去变量是否被释放，比较安全。 */
+  cout << endl;
   return 0;
 }//输出结果：sixth contains: apple:red lemon:yellow orange:orange strawberry:red
 
@@ -49,8 +55,10 @@ int main ()
     unordered_map<string,double>
     myrecipe,
     mypantry = {{"milk",2.0},{"flour",1.5}};
+
     /****************插入*****************/
     pair<string,double> myshopping ("baking powder",0.3);
+
     myrecipe.insert (myshopping);                        // 复制插入
     myrecipe.insert (make_pair<string,double>("eggs",6.0)); // 移动插入
     myrecipe.insert (mypantry.begin(), mypantry.end());  // 范围插入
@@ -83,6 +91,7 @@ baking powder: 0.3
         cout << "not found";
     else
         cout << "found "<<got->first << " is " << got->second<<"\n\n";
+
     /*
 found coffee is 10
     */
@@ -91,6 +100,8 @@ found coffee is 10
     myrecipe.at("coffee") = 9.0;
     myrecipe["milk"] = 3.0;
     display(myrecipe,"After modify myrecipe contains:");
+
+
     /*
 After modify myrecipe contains:
 salt: 0.1
@@ -105,6 +116,7 @@ baking powder: 0.3
     myrecipe.erase(myrecipe.begin());  //通过位置
     myrecipe.erase("milk");    //通过key
     display(myrecipe,"After erase myrecipe contains:");
+
 /*
 After erase myrecipe contains:
 flour: 1.5
@@ -116,6 +128,7 @@ baking powder: 0.3
     /****************交换*****************/
     myrecipe.swap(mypantry);
     display(myrecipe,"After swap with mypantry, myrecipe contains:");
+    myrecipe.swap(mypantry);
 /*
 After swap with mypantry, myrecipe contains:
 flour: 1.5

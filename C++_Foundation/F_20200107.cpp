@@ -3,8 +3,7 @@
 #include <iostream>
 using namespace std;
 
-int main ()
-{
+int main (){
    char data[100];
 
    // 以写模式打开文件
@@ -167,8 +166,7 @@ int main()
 
     int ***p;
     p = new int **[2];
-    for(i=0; i<2; i++)
-    {
+    for(i=0; i<2; i++){
         p[i]=new int *[3];
         for(j=0; j<3; j++)
             p[i][j]=new int[4];
@@ -264,8 +262,9 @@ int main ()
 using namespace std;
 
 template <typename T>//返回两数最大值
-inline T const& Max (T const& a, T const& b)
-{
+inline T const& Max (T const& a, T const& b){
+//在c++中，在类内部实现的函数都默认为inline函数，具体编译方式有编译器判断，
+//如果在类外部实现的类成员函数，如果期望使用内联编译，那么需要在函数前面加上inline关键字
     return a < b ? b:a;
 }
 int main ()

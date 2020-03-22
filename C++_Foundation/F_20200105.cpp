@@ -100,6 +100,7 @@ void foo() { thread_local std::vector<int> v; } // 本地变量
 //格式：[capture](parameters)->return-type{body}
 
 [](int x, int y){ return x < y ; }
+//[]是匿名函数的标识符
 
 []{ ++global_x; } //没有返回值!
 
@@ -113,13 +114,13 @@ void foo() { thread_local std::vector<int> v; } // 本地变量
 
 []      // 沒有定义任何变量。使用未定义变量会引发错误。
 [x, &y] // x以传值方式传入（默认），y以引用方式传入。
-[&]     // 任何被使用到的外部变量都隐式地以引用方式加以引用。
-[=]     // 任何被使用到的外部变量都隐式地以传值方式加以引用。
 [&, x]  // x显式地以传值方式加以引用。其余变量以引用方式加以引用。
 [=, &z] // z显式地以引用方式加以引用。其余变量以传值方式加以引用。
 
+[&]     // 任何被使用到的外部变量都隐式地以引用方式加以引用。
+[=]     // 任何被使用到的外部变量都隐式地以传值方式加以引用。
 [this]() { this->someFunc(); }();
-//需要注意：对于[=]或[&]的形式，lambda 表达式可以直接使用 this 指针。
+//注意：对于[=]或[&]的形式，lambda 表达式可以直接使用 this 指针。
 //但是，对于[]的形式，如果要使用 this 指针，必须显式传入。
 
 
@@ -131,8 +132,7 @@ int i,j;
 srand( (unsigned)time( NULL ) );// 设置种子
 
 /* 生成 10 个随机数 */
-for( i = 0; i < 10; i++ )
-{
+for( i = 0; i < 10; i++ ){
   // 生成实际的随机数
   j= rand();
   cout <<"随机数： " << j << endl;
@@ -159,14 +159,12 @@ int * getRandom( )
 }
 
 // 要调用上面定义函数的主函数
-int main ()
-{
+int main (){
    // 一个指向整数的指针
    int *p;
 
    p = getRandom();
-   for ( int i = 0; i < 10; i++ )
-   {
+   for ( int i = 0; i < 10; i++ ){
        cout << "*(p + " << i << ") : ";
        cout << *(p + i) << endl;
    }
@@ -186,14 +184,13 @@ int main ()
 using namespace std;
 
 // 要生成和返回随机数的函数
-int * getRandom( )
-{//会生成 10 个随机数，并使用表示指针的数组名（即第一个数组元素的地址）来返回它们
+int * getRandom( ){
+//会生成 10 个随机数，并使用表示指针的数组名（即第一个数组元素的地址）来返回它们
   static int  r[10];
 
   // 设置种子
   srand( (unsigned)time( NULL ) );
-  for (int i = 0; i < 10; ++i)
-  {
+  for (int i = 0; i < 10; ++i){
     r[i] = rand();
     cout << r[i] << endl;
   }
@@ -202,14 +199,12 @@ int * getRandom( )
 }
 
 // 要调用上面定义函数的主函数
-int main ()
-{
+int main (){
    // 一个指向整数的指针
    int *p;
 
    p = getRandom();
-   for ( int i = 0; i < 10; i++ )
-   {
+   for ( int i = 0; i < 10; i++ ){
        cout << "*(p + " << i << ") : ";
        cout << *(p + i) << endl;
    }
@@ -228,9 +223,7 @@ double vals[] = {10.1, 12.6, 33.1, 24.1, 50.0};
 double& setValues( int i ) { return vals[i]; }  // 返回第 i 个元素的引用
 
 // 要调用上面定义函数的主函数
-int main ()
-{
-
+int main (){
    cout << "改变前的值" << endl;
    for ( int i = 0; i < 5; i++ ) { cout << "vals[" << i << "] = "<< vals[i] << endl; }
 
@@ -238,8 +231,7 @@ int main ()
    setValues(3) = 70.8;  // 改变第 4 个元素
 
    cout << "改变后的值" << endl;
-   for ( int i = 0; i < 5; i++ )
-   {
+   for ( int i = 0; i < 5; i++ ){
        cout << "vals[" << i << "] = ";
        cout << vals[i] << endl;
    }

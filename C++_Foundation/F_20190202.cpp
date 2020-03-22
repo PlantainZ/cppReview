@@ -1,4 +1,3 @@
-
 #include<stdio.h>
 #include<memory.h>
 #include<iostream>
@@ -6,20 +5,71 @@
 
 ///【1.基础：template||ListNode类】
 /*
-C++类模版为生成通用的类声明提供了一种更好的方法。
-模版提供参数化类型，
-即能通过类型名作为参数传递给接收方来建立类或函数，
-例如将类型名int传递给Queue模版，
-可以让那个模版构造一个对int进行排队的Queue类。
-
 通用类型标示符，例如这里的T，称为类型参数，
 这意味着它们类似于变量，但赋给他们的不能是数字，
 而只能是类型。
 
 为容器类提供可重用代码是引入模版的主要动机。
 */
-template<class T>//或者这里class 也能写成typename
-class ListNode{
+// function template,函数模板
+template <class T>
+T GetMax (T a, T b) {
+    T result;
+    result = (a>b)? a : b;
+    return (result);
+}
+
+int main () {
+    int i=5, j=6, k;
+    long l=10, m=5, n;
+    k=GetMax(i,j); //传入的是两个int,即T此时为int
+    n=GetMax(l,m); //传入的是两个long，即T此时为long
+
+    cout << k << endl; //6
+    cout << n << endl; //10
+    return 0;
+}
+
+
+//这里解释模板类
+template <class T>
+class test{
+private:
+    T a,b;
+public:
+    test(T m,T n){
+        a=m;
+        b=n;
+    }
+
+    T max(){return (a>b)?a:b;}
+    T min();
+};
+
+template<class T>
+T test<T>::min(){
+    return (a>b)?b:a;
+};
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+    test <int> test1(2,3);
+    cout<<test1.max()<<endl;
+    cout<<test1.min()<<endl;
+    test<float> test2(32.12,12.458);
+    cout<<test2.max()<<endl;
+    cout<<test2.min()<<endl;
+    test<char> test3('a','A');
+    cout<<test3.max()<<endl;
+    cout<<test3.min()<<endl;
+    return 0;
+}
+
+
+//然后更复杂的：
+template<class T>//声明一个类模板，虚拟类型名为T
+//实现类的成员函数的复用而不用受数据类型的影响
+class ListNode{//类模板名为ListNode
     T data;
     ListNode<T> *link;//getter & setter 传进来传出去的都是指针
     //因为这里本来就是指针呀！
@@ -43,7 +93,7 @@ public:
 
     void SetLink(ListNode<T> *next);//1.指向别的指针~
     void SetData(T value);//2.
-    ListNode<T> *GetLink();//这里是返回下一个的意思~~~
+    ListNode<T> *GetLink();//这里是返回下一个的意思~~~返回一个指针。
     T& GetData();//4.在函数返回区里的多是引用和指针，这里返回一个引用
     //返回一个引用之后，对面就能接受到这个数据的别称
     //就可以进行输出！
@@ -71,8 +121,21 @@ ListNode<T>* ListNode<T>::GetLink(){
 //因为毕竟没办法把类型实例化嘛，是吧只能用&了
 template<class T>
 T& ListNode<T>::GetData(){
-    return data
+    return data;
 }
+
+int main(){
+    listNode<int> a,b;
+//    listNode<int> *c=&b;
+    a.setData(5);
+    b.setData(9);
+    a.setLink(&b); //参数指定是指针，所以传入b的地址生成指针。
+    cout<<a.getData()<<endl;
+    cout<<a.getLink()->getData()<<endl; //getLink()之后返回的是一个指针。
+    //注意->代表：通过指针访问所指对象，然后调用对象的函数的意思。
+    //注意这里ListNode<T> & ListNode<T>* 的区别，传入和放出都是些什么。
+}
+
 
 ///【2.List类的定义】
 //list类很特别哦，封装的数据成员有表头指针和表尾指针

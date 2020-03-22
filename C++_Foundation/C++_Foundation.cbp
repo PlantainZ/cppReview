@@ -62,6 +62,12 @@
 		<Unit filename="F_20200107.cpp">
 			<Option target="Release" />
 		</Unit>
+		<Unit filename="F_20200321.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="F_20200322.cpp">
+			<Option target="Release" />
+		</Unit>
 		<Unit filename="Foundation_RECORD">
 			<Option target="Release" />
 		</Unit>
