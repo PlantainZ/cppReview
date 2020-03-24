@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1585034653 source:c:\xxxx_coderepository\cppreview\c++_algorithm\temp.cpp
+	<stdio.h>
+	<iostream>
+	<string.h>
+	<iomanip>
+

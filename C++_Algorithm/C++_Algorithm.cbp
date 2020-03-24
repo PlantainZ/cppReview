@@ -32,14 +32,30 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="A_20190119.cpp" />
-		<Unit filename="A_20190121.cpp" />
-		<Unit filename="A_20190122.cpp" />
-		<Unit filename="A_20190125.cpp" />
-		<Unit filename="A_20190126.cpp" />
-		<Unit filename="A_20190129.cpp" />
-		<Unit filename="A_20190130.cpp" />
-		<Unit filename="A_20190131.cpp" />
+		<Unit filename="A_20190119.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="A_20190121.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="A_20190122.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="A_20190125.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="A_20190126.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="A_20190129.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="A_20190130.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="A_20190131.cpp">
+			<Option target="Release" />
+		</Unit>
 		<Unit filename="A_20190201.cpp">
 			<Option target="Release" />
 		</Unit>
@@ -64,8 +80,16 @@
 		<Unit filename="A_20191228.cpp">
 			<Option target="Release" />
 		</Unit>
-		<Unit filename="A_20200109.cpp" />
-		<Unit filename="Algorithm_RECORD" />
+		<Unit filename="A_20200109.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="A_20200324.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="Algorithm_RECORD">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="temp.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

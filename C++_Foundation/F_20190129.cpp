@@ -113,7 +113,7 @@ vector<int>::iterator    iter;    //定义一个名为iter的变量
 //每种容器都定义了一对名为begin和end的函数，是容器自带的！不是迭代器的
 //用于返回迭代器。下面对迭代器进行初始化操作：
 vector<int>    ivec;//要首先定义容器
-vector<int>::iterator    iter1=ivec.bengin();//再定义容器的指表~
+vector<int>::iterator    iter1=ivec.begin();//再定义容器的指表~
 //可以理解为它好像一个指针。
 //将迭代器iter1初始化为指向ivec容器的第一个元素
 
@@ -158,4 +158,43 @@ iter1-=iter2;//两个迭代器依然不能越界
 
 iter1-iter2;//两个迭代器的减法，得出两个迭代器的距离。还是不可以越界
 
+
+///【二维数组实现】===========================================================================================
+#include<iostream>
+#include<vector>
+#define count  3
+using namespace std;
+//目标就是完成二维vector的所有操作
+int main(void)
+{
+    vector<vector<int>> vec1(count) ; //二维数组的 vector 定义
+    //初始化一个3x3的矩阵，数值为 333
+    for(int i = 0 ;i < vec1.size() ;++i){
+        for(int j= 0 ;j < count  ;++j){
+            vec1[i].push_back(333);
+        }
+    }
+
+    //增加一行,数值为444
+    vector<int> temp;
+    vec1.push_back(temp);
+    int pos = vec1.size() - 1;
+    vec1[pos].push_back(444);
+    vec1[pos].push_back(444);
+    vec1[pos].push_back(444);
+
+    //增加一列
+    pos = vec1.size() ;
+    for(int i = 0 ;i < pos ;++i )
+        vec1[i].push_back(555);
+
+    //打印“二维数组”
+    for(int i = 0; i < vec1.size() ;++i){
+        for(int j = 0 ;j< vec1[0].size();++j){
+            cout << vec1[i][j] << "  ";
+        }
+        cout << endl ;
+    }
+
+}
 
