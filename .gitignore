@@ -1,0 +1,2 @@
+# Ignore files and directories in the .vs folder
+.vs/cppReview/v16/Browse.VC.opendb
